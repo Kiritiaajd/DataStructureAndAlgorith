@@ -62,11 +62,25 @@ void addfirst(struct Node ** head, int data){
          {
             ptr=ptr->next;
          }
-         
+
          newNode->next=ptr->next;
          ptr->next=newNode;
         
          
+  }
+  void DeleteNode(struct Node **head , int pos){
+    struct Node *ptr = *head;
+    if (pos <  0)
+    {
+       printf("Invalid position");
+       return;
+    }
+    for (int i = 0; i < pos-2 && ptr->next !=NULL; i++)
+    {
+        ptr= ptr->next;
+    }
+    
+
   }
 int sumElement(struct Node *head){
     int sum = 0;

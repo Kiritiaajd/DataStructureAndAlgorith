@@ -13,12 +13,12 @@ struct Queue *CreateQueue(int size)
     q->size = size;
     q->front = -1;
     q->rear = -1;
-    q->arr = (int *)malloc(sizeof(struct Queue));
+    q->arr = (int *)malloc(size * sizeof(int));
     return q;
 }
 int IsFull(struct Queue *q)
 {
-    return q->size - 1 == q->rear;
+    return q->rear == q->size - 1;
 }
 int IsEmpty(struct Queue *q)
 {
@@ -64,8 +64,9 @@ int main()
     EnQuene(q, 40);
     EnQuene(q, 10);
     EnQuene(q, 20);
+    Display(q);
     EnQuene(q, 30);
     EnQuene(q, 40);
-    Display(q);
+
     return 0;
 }

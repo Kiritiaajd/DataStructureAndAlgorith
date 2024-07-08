@@ -1,15 +1,19 @@
 #include<stdio.h>
+void Swap(int *a , int *b){
+        int temp;
+        temp = *a; 
+        *a = *b;
+        *b= temp;
+}
 void BubbleSort(int *A , int n){
     int temp;
-    for (int i = 0; i <n-1; i++)
+    for (int i = 0; i <n-1 ; i++)
     {
-        for (int j = 0; j < n-1-i; j++)
+        for (int j = 0; j < n-i-1; j++)
         {
                if (A[j] > A[j+1])
                {
-                temp = A[j];
-                 A[j] = A[j+1];
-                 A[j+1] = temp;
+               Swap(A[j] , A[j+1]);
                }
                
         }
@@ -17,6 +21,7 @@ void BubbleSort(int *A , int n){
     }
     
 }
+
 void Display(int *A , int n){
       for (int i = 0; i < n; i++)
       {

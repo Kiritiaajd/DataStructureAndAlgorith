@@ -57,11 +57,8 @@ int DeQueue(struct Queue *q) {
     } else {
          q->front++;
         val = q->arr[q->front];
-       
-        
-        // Reset front and rear when queue becomes empty
-        if (q->front > q->rear) {
-            q->front = 0;
+         if (q->front == q->rear) {
+            q->front = -1;
             q->rear = -1;
         }
     }
@@ -89,8 +86,21 @@ int main()
     EnQuene(q, 110);
 
     printf("Dequeue elemet  : %d \n", DeQueue(q));
-
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+   
+   printf("Again Enqueur the element \n");
     EnQuene(q, 120);
+   
     Display(q);
 
     return 0;

@@ -37,6 +37,7 @@ void Display(struct Queue *q)
     }
     printf("\n");
 }
+
 void EnQuene(struct Queue *q, int val)
 {
     if (IsFull(q))
@@ -49,6 +50,24 @@ void EnQuene(struct Queue *q, int val)
         q->arr[q->rear] = val;
     }
 }
+int DeQueue(struct Queue *q) {
+    int val = -1;
+    if (IsEmpty(q)) {
+        printf("Queue Underflow\n");
+    } else {
+         q->front++;
+        val = q->arr[q->front];
+       
+        
+        // Reset front and rear when queue becomes empty
+        if (q->front > q->rear) {
+            q->front = 0;
+            q->rear = -1;
+        }
+    }
+    return val;
+}
+
 int main()
 {
     struct Queue *q;
@@ -58,15 +77,21 @@ int main()
     EnQuene(q, 20);
     EnQuene(q, 30);
     EnQuene(q, 40);
-    EnQuene(q, 10);
-    EnQuene(q, 20);
-    EnQuene(q, 30);
-    EnQuene(q, 40);
-    EnQuene(q, 10);
-    EnQuene(q, 20);
+    EnQuene(q, 50);
+    EnQuene(q, 60);
+    EnQuene(q, 70);
+    EnQuene(q, 80);
+    EnQuene(q, 90);
+    EnQuene(q, 100);
     Display(q);
-    EnQuene(q, 30);
-    EnQuene(q, 40);
+    printf("When queue is full : ");
+
+    EnQuene(q, 110);
+
+    printf("Dequeue elemet  : %d \n", DeQueue(q));
+
+    EnQuene(q, 120);
+    Display(q);
 
     return 0;
 }

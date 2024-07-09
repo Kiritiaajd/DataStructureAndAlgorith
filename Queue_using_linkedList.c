@@ -36,7 +36,17 @@ void Enqueue(struct Queue *q, int data)
       }
            
 }
-
+   void Dequeue(struct Queue *q){
+      if (q->front == NULL)
+      {
+        printf("Queue is Empty\n");
+      }else
+      {
+        q->front = q->front->next;
+      }
+      
+      
+   }
 #include <stdlib.h>
 int main()
 {
@@ -48,6 +58,8 @@ int main()
     q->rear = NULL;
     Enqueue(q  , 10);
     Enqueue(q , 20);
+    Display(q);
+    Dequeue(q);
     Display(q);
     return 0;
 }

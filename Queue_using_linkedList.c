@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include<stdlib.h>
+
 struct Node
 {
     int data;
@@ -14,13 +16,14 @@ void Display(struct Queue *q){
       while (ptr != NULL)
       {
         printf("%d ", ptr->data);
+        ptr= ptr->next;
       }
       printf("\n");
       
 }
 void Enqueue(struct Queue *q, int data)
 {
-    struct Node *newNode = malloc(malloc(sizeof(struct Node)));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct  Node));
    newNode->data = data;
    newNode->next =NULL;
       if (q->rear ==NULL)
@@ -39,7 +42,8 @@ int main()
 {
 
     // Intializing queue to NULL
-    struct Queue *q;
+    struct Queue *q = malloc(sizeof(struct Queue));
+    
     q->front = NULL;
     q->rear = NULL;
     Enqueue(q  , 10);

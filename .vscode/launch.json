@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/ar329/OneDrive/Desktop/New folder/DataStructureAndAlgorithm",
-      "program": "c:/Users/ar329/OneDrive/Desktop/New folder/DataStructureAndAlgorithm/build/Debug/outDebug",
+      "cwd": "c:/Users/ar329/OneDrive/Desktop/New folder/DataStructureAndAlgorithm/.git",
+      "program": "c:/Users/ar329/OneDrive/Desktop/New folder/DataStructureAndAlgorithm/.git/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
